@@ -21,8 +21,9 @@ class CartScreen extends ConsumerWidget {
           IconButton(
               onPressed: () {
                 ref.read(counterNotifierProvider.notifier).reset();
+                ref.read(cartNotifierProvider.notifier).deleteCaardproduct();
               },
-              icon: const Icon(Icons.restore))
+              icon: const Icon(Icons.delete))
         ],
       ),
       body: Container(

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_files/models/product.dart';
 
@@ -16,6 +18,10 @@ class CartNotifier extends _$CartNotifier {
 
   void removeProduct(product) {
     state = state.where((p) => p.id != product.id).toSet();
+  }
+
+  void deleteCaardproduct() {
+    state = {};
   }
 }
 
