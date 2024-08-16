@@ -25,7 +25,7 @@ class HomeScreen extends ConsumerWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20,
-            childAspectRatio: 0.66,
+            childAspectRatio: 0.65,
           ),
           itemBuilder: (context, index) {
             return Container(
@@ -51,6 +51,7 @@ class HomeScreen extends ConsumerWidget {
                         ref
                             .read(cartNotifierProvider.notifier)
                             .removeProduct(products[index]);
+                        // ref.read(cartNotifierProvider.notifier).
                       },
                       child: const Text("Remove"),
                     ),

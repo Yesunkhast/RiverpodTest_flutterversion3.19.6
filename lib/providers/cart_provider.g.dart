@@ -6,7 +6,7 @@ part of 'cart_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$cartCountHash() => r'1a7ff206583c2465a8d9bab0555720d93ca5737b';
+String _$cartCountHash() => r'776ef3d8d7f5a49df1a9936b4b904913e19d34ff';
 
 /// See also [cartCount].
 @ProviderFor(cartCount)
@@ -20,12 +20,12 @@ final cartCountProvider = AutoDisposeProvider<int>.internal(
 );
 
 typedef CartCountRef = AutoDisposeProviderRef<int>;
-String _$cartNotifierHash() => r'c9109ba1ca3de062a148d53fb8787b910dff774d';
+String _$cartNotifierHash() => r'd10cf3d1a1802b2d76dd76eb74ebae84e80ad42c';
 
 /// See also [CartNotifier].
 @ProviderFor(CartNotifier)
 final cartNotifierProvider =
-    AutoDisposeNotifierProvider<CartNotifier, Set<Product>>.internal(
+    AutoDisposeNotifierProvider<CartNotifier, List<Product>>.internal(
   CartNotifier.new,
   name: r'cartNotifierProvider',
   debugGetCreateSourceHash:
@@ -34,6 +34,6 @@ final cartNotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$CartNotifier = AutoDisposeNotifier<Set<Product>>;
+typedef _$CartNotifier = AutoDisposeNotifier<List<Product>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

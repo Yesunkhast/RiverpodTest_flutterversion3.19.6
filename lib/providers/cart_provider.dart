@@ -5,21 +5,27 @@ part 'cart_provider.g.dart';
 
 @riverpod
 class CartNotifier extends _$CartNotifier {
+  int count = 0;
   @override
-  Set<Product> build() {
-    return {};
+  List<Product> build() {
+    return [];
   }
 
   void addProduct(product) {
-    state = {...state, product};
+    product.count++;
+    state = [...state, product];
   }
 
   void removeProduct(product) {
-    state = state.where((p) => p.id != product.id).toSet();
+    product.count = 0;
+    state = state.where((p) => p.id != product.id).toList();
   }
 
-  void deleteCaardproduct() {
-    state = {};
+  void deleteCardproduct() {
+    for (Product product in state) {
+      product.count = 0;
+    }
+    state = [];
   }
 }
 
@@ -28,7 +34,7 @@ int cartCount(ref) {
   int total = 0;
   final cartProduct = ref.watch(cartNotifierProvider);
   for (Product product in cartProduct) {
-    total += product.price;
+    total += product.price * product.count;
   }
   return total;
 }
