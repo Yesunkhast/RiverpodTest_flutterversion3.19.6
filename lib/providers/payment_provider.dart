@@ -1,5 +1,6 @@
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpod_files/providers/cart_provider.dart';
 
 import '../models/product.dart';
 
@@ -17,6 +18,7 @@ class PaymentNotifier extends _$PaymentNotifier {
   }
 
   void less(Product product) {
-    state -= product.price;
+    final uldegdel = ref.watch(cartCountProvider);
+    if ((uldegdel - product.price) > 0) state -= product.price;
   }
 }
